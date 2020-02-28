@@ -32,18 +32,18 @@ for(int i=0;i<y*z;i++){
 } 
 
 void showData(double *x,int y,int z){
-for(int j=0;j<y*7;j+=7){
+for(int j=0;j<y;j++){
 for(int i=0;i<z;i++){
 	cout<< fixed <<setprecision(2);
-	cout<<*(x+i+j)<<" ";
+	cout<<*(x+i+j*y)<<" ";
 }cout<<endl;}
 }
 
 void findColSum(double const *x,double *a,int y,int z){
 	double f;
 for(int j=0;j<y;j++){
-for(int i=0;i<z*7;i+=7){
-	f+=*(x+i+j);
+for(int i=0;i<z;i++){
+	f+=*(x+i*z+j);
 	}a[j]=f;
 f=0;}
 }
